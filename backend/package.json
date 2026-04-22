@@ -1,0 +1,56 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Collab Space Backend Server",
+  "keywords": [
+    "Collab Space",
+    "Backend",
+    "Server",
+    "Samman Khanal"
+  ],
+  "license": "ISC",
+  "author": "Samman Khanal",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest",
+    "test:auth": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/auth.test.js",
+    "test:workspace": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/workspace.test.js",
+    "test:task": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/task.test.js",
+    "test:channel": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/channel.test.js",
+    "test:dm": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/dm.test.js",
+    "test:subscription": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/subscription.test.js",
+    "test:call": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/call.test.js",
+    "test:notification": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/notification.test.js",
+    "test:attachment": "cross-env NODE_ENV=test JWT_SECRET=test_secret node --experimental-vm-modules node_modules/.bin/jest src/tests/attachment.test.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.6",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "resend": "^6.10.0",
+    "socket.io": "^4.8.3",
+    "stripe": "^14.25.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@jest/globals": "^30.3.0",
+    "babel-jest": "^30.3.0",
+    "cross-env": "^10.1.0",
+    "jest": "^30.3.0",
+    "mongodb-memory-server": "^11.0.1",
+    "nodemon": "^3.1.11",
+    "socket.io-client": "^4.8.3",
+    "supertest": "^7.2.2"
+  }
+}
