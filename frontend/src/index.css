@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-transition {
+  animation: page-in 0.22s ease-out both;
+}
+
+@keyframes upgrade-page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes upgrade-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.upgrade-page-in {
+  animation: upgrade-page-in 0.24s ease-out both;
+}
+
+.upgrade-fade-up {
+  animation: upgrade-fade-up 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .upgrade-page-in,
+  .upgrade-fade-up {
+    animation: none !important;
+  }
+}
+
+
+@keyframes msg-from-left {
+  from { opacity: 0; transform: translateX(-14px) scale(0.96); }
+  to   { opacity: 1; transform: translateX(0)     scale(1); }
+}
+@keyframes msg-from-right {
+  from { opacity: 0; transform: translateX(14px)  scale(0.96); }
+  to   { opacity: 1; transform: translateX(0)     scale(1); }
+}
+@keyframes avatar-pop {
+  0%   { opacity: 0; transform: scale(0.5); }
+  65%  { transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes header-slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes status-ping {
+  0%, 100% { transform: scale(1);   opacity: 0.8; }
+  50%       { transform: scale(1.8); opacity: 0; }
+}
+
+
+@keyframes notif-slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes board-card-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes admin-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes admin-scale-in {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes admin-slide-right {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes admin-row-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes admin-counter {
+  from { opacity: 0; transform: scale(0.5); }
+  60%  { transform: scale(1.08); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.admin-fade-up    { animation: admin-fade-up   0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.admin-scale-in   { animation: admin-scale-in  0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.admin-slide-right{ animation: admin-slide-right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.admin-row-in     { animation: admin-row-in    0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.admin-counter    { animation: admin-counter   0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.msg-from-left  { animation: msg-from-left  0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.msg-from-right { animation: msg-from-right 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.avatar-pop     { animation: avatar-pop     0.3s  cubic-bezier(0.34, 1.56, 0.64, 1)     both; }
+.header-slide-down { animation: header-slide-down 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.status-ping-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: status-ping 1.8s ease-in-out infinite;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+html[data-palette="violet"] {
+  --color-indigo-50:  var(--color-violet-50);
+  --color-indigo-100: var(--color-violet-100);
+  --color-indigo-200: var(--color-violet-200);
+  --color-indigo-300: var(--color-violet-300);
+  --color-indigo-400: var(--color-violet-400);
+  --color-indigo-500: var(--color-violet-500);
+  --color-indigo-600: var(--color-violet-600);
+  --color-indigo-700: var(--color-violet-700);
+  --color-indigo-800: var(--color-violet-800);
+  --color-indigo-900: var(--color-violet-900);
+  --color-indigo-950: var(--color-violet-950);
+}
+
+html[data-palette="blue"] {
+  --color-indigo-50:  var(--color-blue-50);
+  --color-indigo-100: var(--color-blue-100);
+  --color-indigo-200: var(--color-blue-200);
+  --color-indigo-300: var(--color-blue-300);
+  --color-indigo-400: var(--color-blue-400);
+  --color-indigo-500: var(--color-blue-500);
+  --color-indigo-600: var(--color-blue-600);
+  --color-indigo-700: var(--color-blue-700);
+  --color-indigo-800: var(--color-blue-800);
+  --color-indigo-900: var(--color-blue-900);
+  --color-indigo-950: var(--color-blue-950);
+}
+
+html[data-palette="sky"] {
+  --color-indigo-50:  var(--color-sky-50);
+  --color-indigo-100: var(--color-sky-100);
+  --color-indigo-200: var(--color-sky-200);
+  --color-indigo-300: var(--color-sky-300);
+  --color-indigo-400: var(--color-sky-400);
+  --color-indigo-500: var(--color-sky-500);
+  --color-indigo-600: var(--color-sky-600);
+  --color-indigo-700: var(--color-sky-700);
+  --color-indigo-800: var(--color-sky-800);
+  --color-indigo-900: var(--color-sky-900);
+  --color-indigo-950: var(--color-sky-950);
+}
+
+html[data-palette="rose"] {
+  --color-indigo-50:  var(--color-rose-50);
+  --color-indigo-100: var(--color-rose-100);
+  --color-indigo-200: var(--color-rose-200);
+  --color-indigo-300: var(--color-rose-300);
+  --color-indigo-400: var(--color-rose-400);
+  --color-indigo-500: var(--color-rose-500);
+  --color-indigo-600: var(--color-rose-600);
+  --color-indigo-700: var(--color-rose-700);
+  --color-indigo-800: var(--color-rose-800);
+  --color-indigo-900: var(--color-rose-900);
+  --color-indigo-950: var(--color-rose-950);
+}
+
+html[data-palette="emerald"] {
+  --color-indigo-50:  var(--color-emerald-50);
+  --color-indigo-100: var(--color-emerald-100);
+  --color-indigo-200: var(--color-emerald-200);
+  --color-indigo-300: var(--color-emerald-300);
+  --color-indigo-400: var(--color-emerald-400);
+  --color-indigo-500: var(--color-emerald-500);
+  --color-indigo-600: var(--color-emerald-600);
+  --color-indigo-700: var(--color-emerald-700);
+  --color-indigo-800: var(--color-emerald-800);
+  --color-indigo-900: var(--color-emerald-900);
+  --color-indigo-950: var(--color-emerald-950);
+}
+
+html[data-palette="amber"] {
+  --color-indigo-50:  var(--color-amber-50);
+  --color-indigo-100: var(--color-amber-100);
+  --color-indigo-200: var(--color-amber-200);
+  --color-indigo-300: var(--color-amber-300);
+  --color-indigo-400: var(--color-amber-400);
+  --color-indigo-500: var(--color-amber-500);
+  --color-indigo-600: var(--color-amber-600);
+  --color-indigo-700: var(--color-amber-700);
+  --color-indigo-800: var(--color-amber-800);
+  --color-indigo-900: var(--color-amber-900);
+  --color-indigo-950: var(--color-amber-950);
+}
+
+html[data-palette="pink"] {
+  --color-indigo-50:  var(--color-pink-50);
+  --color-indigo-100: var(--color-pink-100);
+  --color-indigo-200: var(--color-pink-200);
+  --color-indigo-300: var(--color-pink-300);
+  --color-indigo-400: var(--color-pink-400);
+  --color-indigo-500: var(--color-pink-500);
+  --color-indigo-600: var(--color-pink-600);
+  --color-indigo-700: var(--color-pink-700);
+  --color-indigo-800: var(--color-pink-800);
+  --color-indigo-900: var(--color-pink-900);
+  --color-indigo-950: var(--color-pink-950);
+}
+
+html[data-palette="teal"] {
+  --color-indigo-50:  var(--color-teal-50);
+  --color-indigo-100: var(--color-teal-100);
+  --color-indigo-200: var(--color-teal-200);
+  --color-indigo-300: var(--color-teal-300);
+  --color-indigo-400: var(--color-teal-400);
+  --color-indigo-500: var(--color-teal-500);
+  --color-indigo-600: var(--color-teal-600);
+  --color-indigo-700: var(--color-teal-700);
+  --color-indigo-800: var(--color-teal-800);
+  --color-indigo-900: var(--color-teal-900);
+  --color-indigo-950: var(--color-teal-950);
+}
